@@ -1,0 +1,41 @@
+{
+  "reports": [
+    {
+      "id": "seer_10yr",
+      "name": "Seer 10-Year Global Scan",
+      "methodology": "phi_harmonic_q3_fixed_points",
+      "run_schedule": "daily",
+      "schedule_cron": "0 0 * * *",
+      "output_format": "markdown",
+      "save_location": "auto_runs/seer/"
+    },
+    {
+      "id": "agi_timeline",
+      "name": "AGI Trajectory + Removals",
+      "methodology": "capability_projection_removal_forensics",
+      "run_schedule": "daily",
+      "schedule_cron": "0 0 * * *",
+      "output_format": "markdown",
+      "save_location": "auto_runs/agi/"
+    }
+  ],
+  "convergence": {
+    "enabled": true,
+    "run_after": ["seer_10yr", "agi_timeline"],
+    "output_location": "auto_runs/convergence/"
+  },
+  "github": {
+    "repository": "decade-forecast-2026-2036",
+    "auto_commit": true,
+    "commit_message_template": "Auto-update: {date} {report_type} report"
+  },
+  "alerts": {
+    "x_posting": {
+      "enabled": false,
+      "trigger_on_critical": true
+    },
+    "email": {
+      "enabled": false
+    }
+  }
+}
