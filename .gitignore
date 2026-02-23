@@ -1,0 +1,14 @@
+# Ignore everything by default
+*
+
+# Allow only the whitepaper reports
+!README.md
+!REPORT_1_SEER.md
+!REPORT_2_AGI.md
+!CONVERGENCE.md
+!TIMELINE_COMBINED.md
+!LICENSE
+!.gitignore
+
+# Allow git directory
+!.git/
